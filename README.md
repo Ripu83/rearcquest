@@ -88,9 +88,6 @@ cd rearcquest
     ec2_key= 'PEM File Name'
     ```
 
-
-
-
 3. Synthesize the CloudFormation Template:
 Generate the CloudFormation template to ensure the stack is set up correctly:
 
@@ -102,4 +99,14 @@ cdk synth
 cdk deploy
 ```
 
+## Required Improvements in the project
+
+1. We can create separte stacks for each services like vpcStack, ecs_asg_Stack, ecs_Stack to decouple it.
+2. We can even use AWS ECS Fargate(Serverless) which will reduce the administration/scaling of application.
+3. We can push docker images to ECR. (Due to AWS charges issues I used docker).
+4. We can create CICD pipeline to create docker images and push to registery.
+5. Architeture diagram is missing due to limited time.
+
+
+**Due to time limitation & AWS charges issues I have not implemented all require things which would make it more reliable and secure**
 
