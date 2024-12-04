@@ -110,3 +110,7 @@ cdk deploy
 
 **Due to time limitation & AWS charges issues I have not implemented all require things which would make it more reliable and secure**
 
+**Running application Screenshot**
+- I have attached demo.png file in root of this git repo which has screenshot of running application.
+- I don't have free tier account so I have to destroy the running application to avoid charges.
+
