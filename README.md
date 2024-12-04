@@ -1,58 +1,51 @@
+# AWS CDK Infrastructure for ECS EC2 Cluster with ALB and Custom HTTPS Certificates
 
-# Welcome to your CDK Python project!
+This repository contains an AWS CDK app to deploy an infrastructure for running an ECS EC2 Cluster with the following components and Quest application.
+- ECS EC2 Cluster with `t2.micro` instances
+- Application Load Balancer (ALB)
+- Custom HTTPS certificates uploaded to AWS ACM
+- Docker image from a public Docker registry
 
-This is a blank project for CDK development with Python.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Prerequisites
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+Before deploying the application, ensure that you have the following tools installed on your local machine:
 
-To manually create a virtualenv on MacOS and Linux:
+1. **AWS CLI**
+   - Install the AWS CLI: [Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+   - Configure AWS CLI with your credentials: 
+     ```bash
+     aws configure
+     ```
 
-```
-$ python -m venv .venv
-```
+2. **AWS CDK**
+   - Install AWS CDK globally using npm:
+     ```bash
+     npm install -g aws-cdk
+     ```
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+3. **Node.js & npm**
+   - Install Node.js (which includes npm) from [Node.js website](https://nodejs.org/)
+   - Verify the installation:
+     ```bash
+     node -v
+     npm -v
+     ```
 
-```
-$ source .venv/bin/activate
-```
+4. **Python**
+   - Ensure Python is installed: [Download Python](https://www.python.org/downloads/)
 
-If you are a Windows platform, you would activate the virtualenv like this:
+## Repository Structure
 
-```
-% .venv\Scripts\activate.bat
-```
+The repository consists of the following folders:
+- **`quest`**: Contains the application code and `Dockerfile` for building the Docker image.
+- **`CDK`**: Contains the CDK application to deploy the ECS EC2 Cluster, ALB, ACM certificates, etc.
 
-Once the virtualenv is activated, you can install the required dependencies.
+## Deploying the CDK Application
 
-```
-$ pip install -r requirements.txt
-```
+Follow these steps to deploy the infrastructure:
 
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
-```
-
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
-
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+1. **Install the necessary dependencies**:
+   In the root folder, run the following commands to install the required Node.js dependencies:
+   ```bash
+   npm install
