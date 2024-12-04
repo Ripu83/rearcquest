@@ -81,10 +81,14 @@ cd rearcquest
     ``` env=cdk.Environment(account='1231123123', region='us-east-1')```
 
   * Update this file with below params rearc_cdk/quest_ecs_ec2.py:
-    
-    - Before deploying the stack, you must update the ACM ARN in the stack file.
-    python
-    ```acm_certificate_arn = "replace-with-your-acm-arn"```
+
+    ``` python
+    acm_certificate_arn = "replace-with-your-acm-arn"
+    docker_image_repo ='ripusudan83/quest:latest'
+    ec2_key= 'PEM File Name'
+    ```
+
+
 
 
 3. Synthesize the CloudFormation Template:
