@@ -76,14 +76,15 @@ cd rearcquest
 
 2. Manual Changes Required to Deploy the Stack
 
-  1. Update Account ID and Region in  
-  to rearc_cdk/quest_ecs_ec2.py:
-    Before deploying the stack, you must update the ACM ARN in the stack file.
+  * Update Account ID and Region in  ```CDK\app.py```
+    - Add your account id and region 
+    ``` env=cdk.Environment(account='1231123123', region='us-east-1')```
 
-    Open rearc_cdk/quest_ecs_ec2.py.
-  Locate the placeholder for the ACM ARN:
-  python
-  ```acm_certificate_arn = "replace-with-your-acm-arn"```
+  * Update this file with below params rearc_cdk/quest_ecs_ec2.py:
+    
+    - Before deploying the stack, you must update the ACM ARN in the stack file.
+    python
+    ```acm_certificate_arn = "replace-with-your-acm-arn"```
 
 
 3. Synthesize the CloudFormation Template:
