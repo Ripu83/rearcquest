@@ -43,7 +43,7 @@ The repository consists of the following folders:
 
 ## Dockerfile in `quest` Folder
 
-The Dockerfile for your application is located in the `quest/Dockerfile` folder
+The Dockerfile used to build the image from application is located in the `quest/Dockerfile` folder.
 
 
 ## Deploying the CDK Application
